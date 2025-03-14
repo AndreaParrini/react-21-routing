@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, /* createRoutesFromElements, Route
 import HomePage from "./pages/Home";
 import ProductsPage from "./pages/Products";
 import RootLayout from "./pages/Root";
+import ErrorPage from "./pages/Error";
 
 /* ALTRO MODO PER DEFINIRE LE ROTTE
 Se si usa questo modo vanno importati anche {createRoutesFromElements, Route} from "react-router-dom";
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
   {
     path:'/', 
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {path: '/', element: <HomePage /> },
       {path: '/products', element: <ProductsPage /> },
