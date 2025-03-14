@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, /* createRoutesFromElements, Route */ } from "react-router-dom";
 import HomePage from "./pages/Home";
 import ProductsPage from "./pages/Products";
+import RootLayout from "./pages/Root";
 
 /* ALTRO MODO PER DEFINIRE LE ROTTE
 Se si usa questo modo vanno importati anche {createRoutesFromElements, Route} from "react-router-dom";
@@ -15,8 +16,14 @@ const routeDefinitions = createRoutesFromElements(
 const router = createBrowserRouter(routeDefinitions); */
 
 const router = createBrowserRouter([
-  {path: '/', element: <HomePage /> },
-  {path: '/products', element: <ProductsPage /> },
+  {
+    path:'/', 
+    element: <RootLayout />,
+    children: [
+      {path: '/', element: <HomePage /> },
+      {path: '/products', element: <ProductsPage /> },
+    ]},
+  
 
 ])
 
